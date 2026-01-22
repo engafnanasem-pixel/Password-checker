@@ -13,4 +13,8 @@ It aslo gives a final strength rating
 python3 proff_pass_check.py 
 #Examble 
 Enter password : Hello123!
-Strong password  
+Strong password
+# Future Improvements
+- Add password generator
+- Add GUI version
+- Save password strength history
