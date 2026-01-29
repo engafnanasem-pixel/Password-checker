@@ -16,11 +16,11 @@ def check_strenght(password):
       score += 1
    
    if score <=1 :
-      return "WEAK 😩️"
+      return "WEAK 😩️ \n Try adding symbols or numbers👀️"
    elif score ==2 :
-      return "MEDIUM 🙂‍↔️️"
+      return "MEDIUM 🙂‍↔️️ \n GOOD but can be stronger🙃️"
    else :
-      return "STRONG 💪️"
+      return "STRONG 💪️\n GREATE password 💪️"
       
 def gen_pas (length=12):
    all_chars = string.ascii_letters +string.digits +string.punctuation
