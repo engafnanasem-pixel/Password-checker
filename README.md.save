@@ -1,0 +1,24 @@
+# Password Strength Checker 🔐
+
+A simple Python CLI project that checks password strength and provides
+detailed feedback and suggestions to improve weak passwords.
+
+## Features
+- Check password strength (WEAK / MEDIUM / STRONG)
+- Detailed password analysis:
+  - Length
+  - Uppercase letters
+  - Lowercase letters
+  - Numbers
+  - Special symbols
+- Suggestions to improve weak passwords
+- Generate a strong random password
+- Menu-based command line interface
+
+## Technologies Used
+- Python 3
+
+## How to Run
+```bash
+python proff_pass_check.py
+
