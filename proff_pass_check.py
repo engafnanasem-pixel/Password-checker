@@ -5,20 +5,35 @@ import string
 
 # Function: Check individual password rules
 def password_tips(password):
+    score = 1
     tips = []
     if len(password) < 8:
         tips.append("Make it at least 8 characters")
+    else :
+        score +=1    
     if not any(char.isupper() for char in password):
         tips.append("Add at least one uppercase letter")
+    else :
+        score +=1   
     if not any(char.isdigit() for char in password):
         tips.append("Add at least one number")
+    else :
+        score +=1   
     if not any(char in "!@#$%^&*()" for char in password):
         tips.append("Add at least one special character (!@#$%^&*())")
-    return tips
+    else :
+        score +=1   
+    return tips , score
+
+def print_strength_bar(password):
+    _ , score = password_tips(password)
+    total = 5
+    bar = '🟩️'* score + '⬜️' * (total-score)
+    print (f"STRENGTH: [{bar}] {score*20}%")
 
 # Function: Evaluate password strength
 def check_strenght(password):
-    tips = password_tips(password)
+    tips , _ = password_tips(password)
     if tips:
         print("Your password is weak. Tips to improve:")
         for tip in tips:
@@ -86,8 +101,9 @@ def main () :
       if choice == "1" :
          pwd = input ("Enter your password ")
          strength = check_strenght(pwd) 
-         if strength == "Weak":
-           print("Suggested strong password:", gen_pas())  
+         '''if strength == "Weak":
+           print("Suggested strong password:", gen_pas())  '''
+         print_strength_bar(pwd)
          #print (f"Password strength : {strength}")
          rep_op = input("If you want password's report press * or press any key: ")
          if rep_op == "*" :
